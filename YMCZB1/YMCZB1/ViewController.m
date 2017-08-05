@@ -18,10 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NextViewController *nVC = [[NextViewController alloc] init];
-    nVC.block = ^(int number) {
-        _dis.text = [NSString stringWithFormat:@"%d",number];
-    };
+    _dis.text = @"0";
+
     
 }
 
@@ -32,6 +30,26 @@
 }
 
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    NSLog(@"segue name: %@",segue.identifier);
+    NextViewController *nVC = [segue destinationViewController];
+    nVC.block = ^(int number) {
+            _dis.text = [NSString stringWithFormat:@"%d",number];
+        };
+    
+}
+
+
 - (IBAction)btn:(id)sender {
+    
+//    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//    NextViewController *nVC = [mainStory instantiateViewControllerWithIdentifier:@"nextViewController"];
+//    nVC.block = ^(int number) {
+//        _dis.text = [NSString stringWithFormat:@"%d",number];
+//    };
+    
 }
 @end

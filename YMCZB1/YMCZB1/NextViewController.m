@@ -7,6 +7,7 @@
 //
 
 #import "NextViewController.h"
+#import "ViewController.h"
 
 @interface NextViewController (){
     int p_number;
@@ -20,6 +21,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     p_number = 0;
+    //
+//    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//    ViewController *vC = [mainStory instantiateViewControllerWithIdentifier:@"viewController"];
+//    self.block = ^(int number) {
+//        vC.dis.text = [NSString stringWithFormat:@"%d",number];
+//    };
+
 }
 
 - (void)didReceiveMemoryWarning {

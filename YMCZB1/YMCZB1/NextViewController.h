@@ -13,6 +13,6 @@ typedef void (^incrementBy1) (int number);
 @interface NextViewController : UIViewController
 - (IBAction)btn:(id)sender;
 
-@property (nonatomic,strong) incrementBy1 block;
+@property (nonatomic,copy) incrementBy1 block;
 
 @end
